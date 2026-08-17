@@ -88,6 +88,8 @@ lib/scene.js   全屏场景：宿主 React/ui 渲染（契约要求，无 JSX、
 
 与 Web 版 [dsh-music-player](https://github.com/heshuren371/dsh-music-player) 的关系：扫描/标签解析逻辑共享，播放引擎重写（浏览器 `<audio>` + Range 流 → 本机播放器进程），UI 按 dsh-tui scenes 契约全新实现。
 
+[dsh-TUI](https://github.com/ccch1mneyyy/dsh-TUI) · 一个为 dsh-TUI 生态打造的插件
+
 ## License
 
 [MIT](./LICENSE)
