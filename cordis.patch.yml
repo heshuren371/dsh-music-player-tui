@@ -1,0 +1,15 @@
+# @local/dsh-music-player-tui bundle patch — 挂载 /music 命令与全屏音乐场景。
+# 宿主侧 PlayerEngine spawn 本机播放器进程（ffplay 优先，afplay 兜底）出声；
+# 场景经 ctx.tuiScenes 注册（dsh-tui ≥ 0.8 的 scenes 服务），/music 命令经
+# dsh-commands 注册表并入 / 菜单。零核心改动：卸载即从装配图摘除，命令、
+# 场景与播放进程一并清理。
+#
+# inject 只写在装配层（不写进代码级 inject，与 dsh-tui 入口行同一模式，
+# 见 dsh-tui cordis.patch.yml 里 issue #183 的注释）：提供服务启动顺序与
+# 热重载重绑定保证；服务行缺失时插件降级（/music 提示场景服务不可用），
+# 而不是把整个装配树卡在 boot。
+
+- insert:
+    - id: music-player-tui
+      name: '@local/dsh-music-player-tui'
+      inject: [commands, tuiScenes, tuiCommandTrees]

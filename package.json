@@ -1,0 +1,43 @@
+{
+  "name": "@local/dsh-music-player-tui",
+  "version": "0.1.0",
+  "description": "DSH TUI 本地音乐播放器：/music 打开全屏场景，选择本地目录、扫描常见音频格式（mp3/flac/m4a/ogg/wav...），ffplay/afplay 后端出声，单曲/列表循环，退出场景音乐不中断。",
+  "license": "MIT",
+  "author": "heshuren371",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heshuren371/dsh-music-player-tui.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-tui",
+    "deepseek-harness",
+    "plugin",
+    "music-player",
+    "tui",
+    "flac",
+    "mp3"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/scanner.js",
+    "lib/player.js",
+    "lib/scene.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "music-metadata": "^11.9.2"
+  }
+}
