@@ -1,0 +1,60 @@
+{
+  "$schema": "https://dsh.community/schemas/dsh-plugin-0.15.json",
+  "manifestVersion": "0.15",
+  "id": "dsh-music-player-tui",
+  "name": "DSH Music Player (TUI)",
+  "version": "0.3.0",
+  "facets": {
+    "host": {
+      "entry": "lib/index.js",
+      "apiVersion": "v1alpha1"
+    }
+  },
+  "requires": {
+    "contracts": [
+      {
+        "apiVersion": "commands.dsh/v1alpha1",
+        "kind": "Command"
+      }
+    ]
+  },
+  "permissions": [
+    {
+      "name": "commands.invoke",
+      "scope": "dsh-music-player-tui.music",
+      "reason": "用户通过 /music 命令主动打开音乐场景或驱动播放控制（dir/play/pause/next/prev/vol/refresh/delete）"
+    }
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "id": "dsh-music-player-tui.music",
+        "title": "音乐",
+        "description": "打开本地音乐播放器全屏场景，或用子命令直接控制播放：dir / play [关键词] / pause / next / prev / vol / refresh / delete"
+      }
+    ],
+    "x-dsh-tui": [
+      {
+        "apiVersion": "tui.dsh/v1alpha1",
+        "kind": "Scene",
+        "id": "dsh-music-player-tui.scene.music-player",
+        "name": "music-player",
+        "spec": {
+          "title": "音乐",
+          "titles": {
+            "en": "Music",
+            "zh-CN": "音乐"
+          }
+        }
+      }
+    ]
+  },
+  "subscriptions": [],
+  "license": "MIT",
+  "source": {
+    "repository": "https://github.com/heshuren371/dsh-music-player-tui"
+  },
+  "compat": {
+    "hosts": ["dsh-tui"]
+  }
+}

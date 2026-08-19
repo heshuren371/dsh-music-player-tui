@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-music-player-tui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "DSH TUI 本地音乐播放器：/music 打开全屏场景，选择本地目录、扫描常见音频格式（mp3/flac/m4a/ogg/wav...），mpv/ffplay/afplay 后端出声，单曲/列表循环，可删除曲目，退出场景音乐不中断。",
   "license": "MIT",
   "author": "heshuren371",
@@ -30,8 +30,13 @@
     "lib/player.js",
     "lib/scene.js",
     "cordis.patch.yml",
-    "README.md"
+    "dsh-plugin.json",
+    "README.md",
+    "scripts/validate-manifest.mjs"
   ],
+  "scripts": {
+    "validate:manifest": "node scripts/validate-manifest.mjs"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
