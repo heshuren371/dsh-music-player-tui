@@ -3,7 +3,7 @@
   "manifestVersion": "0.15",
   "id": "dsh-music-player-tui",
   "name": "DSH Music Player (TUI)",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "facets": {
     "host": {
       "entry": "lib/index.js",
